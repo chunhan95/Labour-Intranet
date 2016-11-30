@@ -3,18 +3,23 @@
 Chin Jen Wei: 
 The Register PLKS system should let the admin to register new PLKS into the system.
 
-30/11/2016
 Ng Shi Hang:
 The  system should able to add the new admin into the system.
 
-30/11/2016
 Chin Jen Wei:
 The System should let the director to view their company in their home page.
 
-30/11/2016
 Ng Shi Hang:
-The system should let the admin to create the new forgein worker information.
+The system should let the admin to create the new foreign worker information.
 
-30/11/2016:
 Lim Boon Haw:
 The system should let admin to filter worker by PLKS company.
+
+Lee Chun Han:
+We might not be able to handle so many module at the same time.
+
+Daily Objective:
+Additional Function:
+admin registration module
+company registration module
+
