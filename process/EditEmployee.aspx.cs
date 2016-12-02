@@ -42,7 +42,7 @@ namespace PrisMegahHRSystem.Particular_Maintenance
         {
             rbtnGender.Visible = true;
         }
-
+        
         protected void ibtnEditPosition_Click(object sender, ImageClickEventArgs e)
         {
             ddlPosition.Visible = true;
