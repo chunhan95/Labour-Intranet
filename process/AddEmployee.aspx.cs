@@ -25,7 +25,6 @@ namespace PrisMegahHRSystem.Employee
             {
                 Response.Redirect("../LogoutScreen.aspx");
             }
-
         }
 
         protected void ibtnCancel_Click(object sender, ImageClickEventArgs e)
