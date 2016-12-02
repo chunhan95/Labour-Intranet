@@ -57,7 +57,7 @@ namespace PrisMegahHRSystem.Employee
             else
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Name, Login ID, and Password must not be blank !!');", true);
         }
-
+        
         public void insertUser()
         {
             conn = new SqlConnection(connString);
