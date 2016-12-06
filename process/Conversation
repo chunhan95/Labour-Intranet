@@ -94,3 +94,12 @@ System Homepage completed
 Add new foreign worker module completed
 Worker Searching Function is in progress.
 
+
+06/12/2016
+Chong Wai Kit:
+While the testing of assign person in charge module, customer request to reserve 4 person in charge slots for each PLKS company instead of 1 slot.
+The concept behind is each admin can only deal with and view the foreign worker record which is being group under his/her own assigned PLKS company.
+I will work on this improvement into the assign PIC module.
+
+Chong Wai Kit:
+Today, I'm picking up the chores of clearing user login cache once logout to enhance the system security. 
