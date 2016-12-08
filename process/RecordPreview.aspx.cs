@@ -156,6 +156,43 @@ namespace PrisMegahHRSystem
             conn.Close();
         }
 
+        protected void ibtnByPLKSCo_Click(object sender, ImageClickEventArgs e)
+        {
+            string role = Session["role"].ToString();
+            string user = Session["id"].ToString();
+            conn = new SqlConnection(connString);
+            DataTable dt = new DataTable();
+            conn.Open();
+            String queryStr = "";
+            if (role == "System Admin" || role == "Director")
+            {
+                queryStr = "SELECT FORMAT([receivedDate],'dd/MM/yyyy') AS [Received Date], [name] AS [Worker Name], [passportNo_New] AS [New Passport No], [passportNo_Old] AS [Old Passport No]," +
+                    " [nationality] AS [Nationality], FORMAT([passportExp],'dd/MM/yyyy') AS [Passport Expiry], FORMAT([PLKSExp],'dd/MM/yyyy') AS [PLKS Expiry]," +
+                    " [PLKSCompany] AS [Permit Company Name], [sector] AS [Sector], [employerName] AS [Client], [employerCompany] AS [Client Company]," +
+                    " [employerContact_No] AS [Client Tel], [agent] AS [Marketing], [adminIncharge] AS [Admin], [serviceType] AS [Service Type], [servicePhase] AS [Service Phase]," +
+                    " [submitBy] As [Submit By], [submitTo] AS [Submit To], [invoiceNo] AS [Invoice], FORMAT([submitDate],'dd/MM/yyyy') AS [Submit Date], [workerDetails].[policyIG] AS [Policy IG]," +
+                    " [nextOfKin] AS [Next Of Kin], [nextOfKinAddress] AS [Next Of Kin Address],  [remark] AS [Remarks] FROM [workerDetails] LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo" +
+                    " WHERE PLKSCompany=('" + ddlSearchByCo.Text + "') AND workerStatus = 'Available'";
+            }
+            else if (role == "Administrator")
+            {
+                queryStr = "SELECT FORMAT([receivedDate],'dd/MM/yyyy') AS [Received Date], workerDetails.name AS [Worker Name], [passportNo_New] AS [New Passport No], [passportNo_Old] AS [Old Passport No]," +
+                    " [nationality] AS [Nationality], FORMAT([passportExp],'dd/MM/yyyy') AS [Passport Expiry], FORMAT([PLKSExp],'dd/MM/yyyy') AS [PLKS Expiry]," +
+                    " [PLKSCompany] AS [Permit Company Name], [sector] AS [Sector], [employerName] AS [Client], [employerCompany] AS [Client Company]," +
+                    " [employerContact_No] AS [Client Tel], [agent] AS [Marketing], [adminIncharge] AS [Admin], [serviceType] AS [Service Type], [servicePhase] AS [Service Phase]," +
+                    " [submitBy] As [Submit By], [submitTo] AS [Submit To], [invoiceNo] AS [Invoice], FORMAT([submitDate],'dd/MM/yyyy') AS [Submit Date], [workerDetails].[policyIG] AS [Policy IG]," +
+                    " [nextOfKin] AS [Next Of Kin], [nextOfKinAddress] AS [Next Of Kin Address],  [remark] AS [Remarks] FROM (workerDetails" +
+                    " INNER JOIN permitCompany_List ON (workerDetails.PLKSCompany=permitCompany_List.companyName)" +
+                    " INNER JOIN userDetails ON (permitCompany_List.PIC1=userDetails.name OR permitCompany_List.PIC2=userDetails.name OR permitCompany_List.PIC3=userDetails.name OR permitCompany_List.PIC4=userDetails.name))" +
+                    " LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo" +
+                    " WHERE PLKSCompany=('" + ddlSearchByCo.Text + "') AND workerStatus = 'Available' AND userDetails.loginID=('" + user + "')";
+            }
+            SqlCommand cmd = new SqlCommand(queryStr, conn);
+            gvWorkers.DataSource = cmd.ExecuteReader();
+            gvWorkers.DataBind();
+            conn.Close();
+        }
+
         protected void btnTop_Click(object sender, EventArgs e)
         {
             Page.ClientScript.RegisterClientScriptBlock(btnTop.GetType(), "OnClick", "<script>window.scroll(0,0); </script>");
