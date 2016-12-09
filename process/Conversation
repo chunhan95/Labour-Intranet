@@ -156,3 +156,7 @@ Search foreign worker's record by PLKS company name has been completed.
 09/12/2016
 Ng Shi Hang:
 I will take over the user story about an admin want to edit existing foreign worker detail. I am also planning to coding this user story. 
+
+Chong Wai Kit:
+User story of assign admin in charge into each PLKS company has been fully tested and delivered.
+With this feature, each admin will only allow to deal with the foreign worker records which is group under their in charge PLKS company.
