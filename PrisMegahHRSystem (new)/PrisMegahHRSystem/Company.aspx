@@ -109,6 +109,9 @@
                     <asp:TextBox ID="txtEmpTel1" runat="server" Width="32px" MaxLength="4"></asp:TextBox>
                     <asp:Label ID="Label13" runat="server" Text="-"></asp:Label>
                     <asp:TextBox ID="txtEmpTel2" runat="server"></asp:TextBox>
+                    <br />
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEmpTel1" ErrorMessage="Only numbers allowed" Font-Bold="True" ForeColor="#FF3300" ValidationExpression="\d+"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtEmpTel2" ErrorMessage="Only numbers allowed" Font-Bold="True" ForeColor="#FF3300" ValidationExpression="\d+"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
