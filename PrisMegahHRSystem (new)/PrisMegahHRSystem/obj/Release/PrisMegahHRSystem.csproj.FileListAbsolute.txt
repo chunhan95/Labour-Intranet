@@ -1,0 +1,12 @@
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem\PrisMegahHRSystem\bin\PrisMegahHRSystem.dll
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem\PrisMegahHRSystem\bin\PrisMegahHRSystem.pdb
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem\PrisMegahHRSystem\obj\Release\PrisMegahHRSystem.dll
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem\PrisMegahHRSystem\obj\Release\PrisMegahHRSystem.pdb
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem (new)\PrisMegahHRSystem\bin\PrisMegahHRSystem.dll
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem (new)\PrisMegahHRSystem\bin\PrisMegahHRSystem.pdb
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem (new)\PrisMegahHRSystem\obj\Release\PrisMegahHRSystem.dll
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem (new)\PrisMegahHRSystem\obj\Release\PrisMegahHRSystem.pdb
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem (new)\PrisMegahHRSystem\bin\ClosedXML.xml
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem (new)\PrisMegahHRSystem\bin\ClosedXML.dll
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem (new)\PrisMegahHRSystem\bin\DocumentFormat.OpenXml.dll
+C:\Users\PC\Documents\Visual Studio 2012\Projects\PrisMegahHRSystem (new)\PrisMegahHRSystem\obj\Release\PrisMegahHRSystem.csprojResolveAssemblyReference.cache

@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Common.master.cs" Inherits="PrisMegahHRSystem.Master_page.Common" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta http-equiv="Refresh" content="900;url=../LogoutScreen.aspx" />
+    <link rel="stylesheet" type="text/css" href="../CSS class/MasterPage_Layout.css" />
+    <link id="Link1" runat="server" rel="shortcut icon" href="~/Images/prismegah_icon.ico" type="image/x-icon" />
+    <link id="Link2" runat="server" rel="icon" href="~/Images/prismegah_icon.ico" type="image/ico" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-image: url('../Images/light-blue-background.jpg')">
+    <form id="form1" runat="server">
+        <div style="text-align: center">
+            <a href="../Home.aspx">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/PrisMegah_Logo.JPG" />
+            </a>
+            <br />
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="footer">
+            <p>
+                <asp:Label ID="Label1" runat="server" Text="COPYRIGHT © 2016 PRISMEGAH HOLDINGS SDN BHD. All Rights Reserved." Font-Names="Bookman Old Style"></asp:Label>
+            </p>
+        </div>
+    </form>
+</body>
+</html>

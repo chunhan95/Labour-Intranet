@@ -1,0 +1,179 @@
+﻿/*http://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/
+*/
+body {
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    background-color: none;
+    width: 650px;
+}
+
+.center2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+    margin-bottom: 6%;
+    background-color: none;
+    width: 1000px;
+}
+
+.upper-case
+{
+    text-transform:uppercase;
+}
+
+.fade
+{
+        opacity:0.5;
+}
+.fade:hover
+{
+        opacity:1;
+}
+
+.grow:hover
+{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+}
+
+.shrink:hover
+{
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+}
+
+.labelTitle {
+    display: block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    float: none;
+    z-index: auto;
+    width: 160px;
+    height: auto;
+    position: static;
+    cursor: default;
+    opacity: 1;
+    margin: 0;
+    padding: 14px 12px;
+    overflow: hidden;
+    border: none;
+    -webkit-border-radius: 13px;
+    border-radius: 13px;
+    font: normal 16px/1 "Comic Sans MS", cursive, sans-serif;
+    color: rgba(119,71,71,1);
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    background: -webkit-linear-gradient(45deg, rgba(63,198,171,1) 0, rgba(63,198,171,1) 1%, rgba(21,206,239,1) 100%);
+    background: -moz-linear-gradient(45deg, rgba(63,198,171,1) 0, rgba(63,198,171,1) 1%, rgba(21,206,239,1) 100%);
+    background: linear-gradient(45deg, rgba(63,198,171,1) 0, rgba(63,198,171,1) 1%, rgba(21,206,239,1) 100%);
+    background-position: 50% 50%;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: auto auto;
+    background-size: auto auto;
+    -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-transform-origin: 50% 50% 0;
+    transform-origin: 50% 50% 0;
+}
+
+.labelTitle2 {
+    display: block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    float: none;
+    z-index: auto;
+    width: 260px;
+    height: auto;
+    position: static;
+    cursor: default;
+    opacity: 1;
+    margin: 0;
+    padding: 14px 12px;
+    overflow: hidden;
+    border: none;
+    -webkit-border-radius: 13px;
+    border-radius: 13px;
+    font: normal 16px/1 "Comic Sans MS", cursive, sans-serif;
+    color: rgba(119,71,71,1);
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    background: -webkit-linear-gradient(45deg, rgba(63,198,171,1) 0, rgba(63,198,171,1) 1%, rgba(21,206,239,1) 100%);
+    background: -moz-linear-gradient(45deg, rgba(63,198,171,1) 0, rgba(63,198,171,1) 1%, rgba(21,206,239,1) 100%);
+    background: linear-gradient(45deg, rgba(63,198,171,1) 0, rgba(63,198,171,1) 1%, rgba(21,206,239,1) 100%);
+    background-position: 50% 50%;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: auto auto;
+    background-size: auto auto;
+    -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-transform-origin: 50% 50% 0;
+    transform-origin: 50% 50% 0;
+}
+
+.titlePreview {
+    display: block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    float: none;
+    z-index: auto;
+    width: 190px;
+    height: auto;
+    position: static;
+    cursor: default;
+    opacity: 0.92;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    border: none;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    font: normal normal bold 16px/1 Verdana, Geneva, sans-serif;
+    color: rgba(184,140,209,1);
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    background: rgba(86,212,234,0.83);
+    -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,1) ;
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,1) ;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+    -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+    -webkit-transform: none;
+    transform: none;
+    -webkit-transform-origin: 50% 50% 0;
+    transform-origin: 50% 50% 0;
+}

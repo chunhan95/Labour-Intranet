@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Director.master.cs" Inherits="PrisMegahHRSystem.Master_page.Director" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <meta http-equiv="Refresh" content="900;url=LogoutScreen.aspx" />
+    <link rel="stylesheet" type="text/css" href="../CSS class/MasterPage_Layout.css" />
+    <link id="Link1" runat="server" rel="shortcut icon" href="~/Images/prismegah_icon.ico" type="image/x-icon"/>
+    <link id="Link2" runat="server" rel="icon" href="~/Images/prismegah_icon.ico" type="image/ico"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-color: lightgrey">
+    <%--style="background-image: url('../Images/home-background.jpg')">--%>
+    <form id="form1" runat="server" style="background-image: url('../Images/home-background.jpg')">
+        <div id="wrapper">
+            <a href="Home.aspx">
+                <div id="banner" style="background-image: url(Images/PrisMegah_Logo.JPG)">
+                </div>
+            </a>
+            <div>
+                <table style="width: 100%; border: none">
+                    <tr style="background-color: antiquewhite">
+                        <td style="width: 20%">
+                            <asp:ContentPlaceHolder ID="DirectoryPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+                        </td>
+                        <td style="width: 30%">
+                            <asp:Label ID="Label9" runat="server" Font-Size="Small" Text="Current User: " Font-Bold="True"></asp:Label>
+                            <asp:Label ID="lblUserID" runat="server" Font-Size="Small"></asp:Label>
+                        </td>
+                        <td style="width: 50%">
+                            <div class="noti_Container">
+                                <asp:ImageButton ID="ibtnLogout" runat="server" Height="25px" ImageUrl="~/Images/logout-button.png" Width="25px" OnClick="ibtnLogout_Click" ToolTip="Logout" />
+                            </div>
+                            &nbsp;                            
+                            <div class="noti_Container">
+                                <asp:ImageButton ID="ibtn90days" runat="server" Height="20px" ImageUrl="~/Images/blue-circle.png" ToolTip="Less than 90 days" Width="20px" OnClick="ibtn90days_Click" />
+                                <div class="noti_bubble">
+                                    <asp:Label ID="lbl90days" runat="server" Font-Size="Smaller"></asp:Label>
+                                </div>
+                            </div>
+                            &nbsp;
+                            <div class="noti_Container">
+                                <asp:ImageButton ID="ibtn60days" runat="server" Height="20px" ImageUrl="~/Images/yellow-circle.png" ToolTip="Less than 60 days" Width="20px" OnClick="ibtn60days_Click" />
+                                <div class="noti_bubble">
+                                    <asp:Label ID="lbl60days" runat="server" Text="" Font-Size="Smaller"></asp:Label>
+                                </div>
+                            </div>
+                            &nbsp;
+                            <div class="noti_Container">
+                                <asp:ImageButton ID="ibtn30days" runat="server" Height="20px" ImageUrl="~/Images/orange-circle.png" ToolTip="Less than 30 days" Width="20px" OnClick="ibtn30days_Click" />
+                                <div class="noti_bubble">
+                                     <asp:Label ID="lbl30days" runat="server" Text="" Font-Size="Smaller"></asp:Label>
+                                </div>
+                            </div>
+                            &nbsp;
+                            <div class="noti_Container">
+                                <asp:ImageButton ID="ibtnExpired" runat="server" Height="20px" ImageUrl="~/Images/red-circle.png" ToolTip="Expired" Width="20px" OnClick="ibtnExpired_Click" />
+                                <div class="noti_bubble">
+                                    <asp:Label ID="lblExpired" runat="server" Font-Size="Smaller"></asp:Label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <table style="width: 100%">
+                    <tr>
+                        <%-- For left navigation--%>
+                        <td style="width: 15%; vertical-align: top">
+                            <asp:Menu ID="Menu1" runat="server" BackColor="#B5C7DE"
+                                DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="1em"
+                                ForeColor="#284E98" StaticSubMenuIndent="10px">
+                                <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
+                                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                <DynamicMenuStyle BackColor="#B5C7DE" />
+                                <DynamicSelectedStyle BackColor="#507CD1" />
+                                <Items>
+                                    <asp:MenuItem Text="Employee" Value="Employee" Selectable="False">
+                                        <asp:MenuItem Text="Add New Employee" Value="Add New Employee" NavigateUrl="~/Particular Maintenance/AddEmployee.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Edit Employee Particular" Value="Edit Employee Particular" NavigateUrl="~/Particular Maintenance/EditEmployee.aspx"></asp:MenuItem>
+                                        <asp:MenuItem Text="Assign Person In Charge" Value="Assign Person In Charge" NavigateUrl="~/AdminAssign.aspx"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Company" Value="Company" Selectable="False">
+                                        <asp:MenuItem NavigateUrl="~/Company.aspx" Text="New PLKS Company" Value="New PLKS Company"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Worker" Value="Worker" Selectable="False">
+                                        <asp:MenuItem Text="Calling VISA" Value="Calling VISA" Selectable="False">
+                                            <asp:MenuItem NavigateUrl="~/Particular Maintenance/AddWorker.aspx" Text="Add New Worker" Value="Add New Worker"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Renewal" Value="Renewal" Selectable="False">
+                                            <asp:MenuItem NavigateUrl="~/UpdatePassport.aspx" Text="Expiry Details" Value="Expiry Details"></asp:MenuItem>
+                                        </asp:MenuItem>
+                                        <asp:MenuItem Text="Edit Worker Particular" Value="Edit Worker Particular" NavigateUrl="~/Particular Maintenance/EditWorker.aspx"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Attachment" Value="Attachment" Selectable="False">
+                                        <asp:MenuItem NavigateUrl="~/Attach.aspx" Text="Upload" Value="Upload"></asp:MenuItem>
+                                        <asp:MenuItem NavigateUrl="~/ImagePreview.aspx" Text="Preview" Value="Preview"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                    <asp:MenuItem Text="Record" Value="Record" Selectable="False">
+                                        <asp:MenuItem NavigateUrl="~/RecordPreview.aspx" Target="_blank" Text="View" Value="View"></asp:MenuItem>
+                                    </asp:MenuItem>
+                                </Items>
+                                <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
+                                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                <StaticSelectedStyle BackColor="#507CD1" />
+                            </asp:Menu>
+                        </td>
+                        <%--For content place holder--%>
+                        <td style="width: 85%">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 0%"></td>
+                        <td style="width: 100%">
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+            </div>
+
+            <div id="footer">
+                <p>
+                    <asp:Label ID="Label1" runat="server" Text="COPYRIGHT © 2016 PRISMEGAH HOLDINGS SDN BHD. All Rights Reserved." Font-Names="Bookman Old Style"></asp:Label>
+                </p>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\PC\Desktop\intranet</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AdminAssign.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Attach.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/005.jpg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/008.jpg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/ClosedXML.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/DocumentFormat.OpenXml.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/PrisMegahHRSystem.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Calendar.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Company.aspx">
+      <publishTime>11/09/2016 02:54:18</publishTime>
+    </File>
+    <File Include="CSS class/Layout.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="CSS class/Login_Layout.css">
+      <publishTime>04/07/2016 22:47:44</publishTime>
+    </File>
+    <File Include="CSS class/MasterPage_Layout.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="CSS class/my-slider.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="CSS class/Passport_Layout.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="EditPay.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Expiry Reminder/30days.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Expiry Reminder/60days.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Expiry Reminder/90days.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Expiry Reminder/Expired.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Expiry Reminder/ViewDetails.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Home.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ImagePreview.aspx">
+      <publishTime>01/10/2016 03:58:19</publishTime>
+    </File>
+    <File Include="Images/add-button.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/backgound.jpg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/blue-circle.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/calendar.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/cancel-button.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/clear-action.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/confirm-buton.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/down-arrow.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/edit-icon.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/filter-button.png">
+      <publishTime>11/10/2016 23:50:43</publishTime>
+    </File>
+    <File Include="Images/gender.png">
+      <publishTime>01/07/2016 00:35:28</publishTime>
+    </File>
+    <File Include="Images/home-backgound.jpg">
+      <publishTime>09/08/2016 17:42:05</publishTime>
+    </File>
+    <File Include="Images/key-button.png">
+      <publishTime>05/07/2016 01:40:58</publishTime>
+    </File>
+    <File Include="Images/light-blue-background.jpg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/login-button.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/loginBackground.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/login_icon.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/logout-button.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/minus-button.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/move-action.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/orange-circle.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/prismegah_icon.ico">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/PrisMegah_Logo.JPG">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/red-circle.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Images/search-button.png">
+      <publishTime>04/07/2016 21:32:16</publishTime>
+    </File>
+    <File Include="Images/yellow-circle.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ism/css/my-slider.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ism/image/slides/_u/1471284666712_650397.jpg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ism/image/slides/_u/1471284666771_831963.jpg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ism/image/slides/_u/1471284667079_878114.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ism/image/slides/_u/1471284667368_985522.jpg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ism/image/slides/_u/1471284667637_435833.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ism/image/slides/_u/1471284667817_1143.jpg">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ism/image/slides/_u/1471284669541_748886.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ism/js/ism-2.2.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="ism/js/ism-2.2.min.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>09/20/2016 02:25:08</publishTime>
+    </File>
+    <File Include="LogoutScreen.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Master page/Account.Master">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Master page/Admin.Master">
+      <publishTime>11/08/2016 22:59:34</publishTime>
+    </File>
+    <File Include="Master page/Common.Master">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Master page/Director.Master">
+      <publishTime>11/08/2016 22:59:07</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Particular Maintenance/AddEmployee.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Particular Maintenance/AddWorker.aspx">
+      <publishTime>11/09/2016 02:06:14</publishTime>
+    </File>
+    <File Include="Particular Maintenance/Company.aspx">
+      <publishTime>06/11/2016 00:56:17</publishTime>
+    </File>
+    <File Include="Particular Maintenance/EditEmployee.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Particular Maintenance/EditWorker.aspx">
+      <publishTime>11/09/2016 02:47:39</publishTime>
+    </File>
+    <File Include="Payment.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Preview handler/FileCS.ashx">
+      <publishTime>12/08/2016 23:39:35</publishTime>
+    </File>
+    <File Include="Preview handler/HandlerImage.ashx">
+      <publishTime>12/08/2016 17:43:21</publishTime>
+    </File>
+    <File Include="Preview handler/InsuransCS.ashx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Preview handler/PassCS.ashx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Preview handler/PLKSCS.ashx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="RecordPreview.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="UpdatePassport.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
