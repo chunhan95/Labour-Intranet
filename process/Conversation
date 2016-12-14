@@ -164,3 +164,46 @@ With this feature, each admin will only allow to deal with the foreign worker re
 Daily Objective
 Edit Foreign Worker Record started and in progress.
 Assign Admin In Charge has been fully delivered.
+
+
+12/12/2016
+Chong Wai Kit:
+Block resigned user from access into the system has been completed and fully delivered.
+
+Chin Jen Wei:
+I'm going to pick up and develop user story of #134567341 as today's task.
+
+Daily Objective
+Block resign user login feature fully developed.
+Upload worker's particular feature started and in progress.
+
+
+13/12/2016
+Chong Wai Kit:
+There is a bug report from our customer which regards to the records preview.
+
+Chong Wai Kit:
+They suspect several worker records appear as duplicate in the list after they have add the workers into the system. 
+I will try to figure out what is cause for this issue and resolve it as soon as possible.
+
+Chong Wai Kit:
+By the way, the validation during data entry has been enhanced by adding in validation into the contact number field.
+
+Daily Objective
+Bug on record preview page discovered and in the progress of resolving.
+New validation added to every contact number field.
+
+
+14/12/2016
+Chong Wai Kit:
+For the earlier bug of duplicate foreign worker records display in record preview page has been resolve. 
+
+Chong Wai Kit:
+It is being caused by the insurance details in workerInsurans table which not being removed together when the associate record in workerDetails table has been removed for re-enter purpose. 
+This has lead to double entry in workerInsurans table when the particular foreign worker detail has been re-enter again.
+
+Chong Wai Kit:
+The workaround is create a function that check the existence of insurance detail in workerInsurans table before insert the particular worker detail.
+
+Daily Objective
+Bug of duplication display in record preview page has been resolved.
