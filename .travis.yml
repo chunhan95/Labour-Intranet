@@ -2,6 +2,6 @@ language: csharp
 sudo: required
 solution: PrisMegahHRSystem.sln
 install:
-  - nuget restore PrisMegahHRSystem (new)/PrisMegahHRSystem.sln
+  - nuget restore PrisMegahHRSystem.sln
 script:
   - xbuild /p:Configuration=Release PrisMegahHRSystem.sln
