@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrisMegahHRSystem", "PrisMegahHRSystem\PrisMegahHRSystem.csproj", "{89AC87F1-3649-4AE6-85C6-2CAE2A5A3B84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrisMegahUnitTest", "PrisMegahUnitTest\PrisMegahUnitTest.csproj", "{38FD0FB7-CCCF-4717-86E7-AEAD0E05A0CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89AC87F1-3649-4AE6-85C6-2CAE2A5A3B84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89AC87F1-3649-4AE6-85C6-2CAE2A5A3B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89AC87F1-3649-4AE6-85C6-2CAE2A5A3B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89AC87F1-3649-4AE6-85C6-2CAE2A5A3B84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38FD0FB7-CCCF-4717-86E7-AEAD0E05A0CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38FD0FB7-CCCF-4717-86E7-AEAD0E05A0CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38FD0FB7-CCCF-4717-86E7-AEAD0E05A0CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38FD0FB7-CCCF-4717-86E7-AEAD0E05A0CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
