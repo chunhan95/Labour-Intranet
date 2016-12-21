@@ -1,5 +1,4 @@
-﻿//http://www.aspsnippets.com/Articles/Export-data-from-SQL-Server-to-Excel-in-ASPNet-using-C-and-VBNet.aspx
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +8,8 @@ using System.Web.Services;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
+using ClosedXML.Excel;
 
 namespace PrisMegahHRSystem
 {
@@ -91,6 +92,156 @@ namespace PrisMegahHRSystem
                         dt.Rows[0]["RecordCount"] = cmd.Parameters["@RecordCount"].Value;
                         ds.Tables.Add(dt);
                         return ds;
+                    }
+                }
+            }
+        }
+
+        protected void btnGetBeforeRenew_Click(object sender, EventArgs e)
+        {
+            string role = Session["role"].ToString();
+            string user = Session["id"].ToString();
+            setUserLog();
+            string strConnString = ConfigurationManager.ConnectionStrings["PrisMegahConnString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(strConnString))
+            {
+                if (role == "System Admin" || role == "Director")
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT workerDetails.*, workerInsurans.nextOfKin, workerInsurans.nextOfKinAddress FROM [workerDetails] LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo WHERE (DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(passportExp,'yyyy-MM-dd')) <= 0 OR DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(PLKSExp,'yyyy-MM-dd')) <= 0) AND workerStatus = 'Available'"))
+                    {
+                        using (SqlDataAdapter sda = new SqlDataAdapter())
+                        {
+                            cmd.Connection = con;
+                            sda.SelectCommand = cmd;
+                            using (DataTable dt = new DataTable())
+                            {
+                                sda.Fill(dt);
+                                using (XLWorkbook wb = new XLWorkbook())
+                                {
+                                    wb.Worksheets.Add(dt, "Workers");
+
+                                    Response.Clear();
+                                    Response.Buffer = true;
+                                    Response.Charset = "";
+                                    Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                    Response.AddHeader("content-disposition", "attachment;filename=Before Renew.xlsx");
+                                    using (MemoryStream MyMemoryStream = new MemoryStream())
+                                    {
+                                        wb.SaveAs(MyMemoryStream);
+                                        MyMemoryStream.WriteTo(Response.OutputStream);
+                                        Response.Flush();
+                                        Response.End();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else if (role == "Administrator")
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT workerDetails.*, workerInsurans.nextOfKin, workerInsurans.nextOfKinAddress FROM ([workerDetails] INNER JOIN permitCompany_List ON (workerDetails.PLKSCompany=permitCompany_List.companyName) INNER JOIN userDetails ON (permitCompany_List.PIC1=userDetails.name OR permitCompany_List.PIC2=userDetails.name OR permitCompany_List.PIC3=userDetails.name OR permitCompany_List.PIC4=userDetails.name)) LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo WHERE (DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(passportExp,'yyyy-MM-dd')) <= 0 OR DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(PLKSExp,'yyyy-MM-dd')) <= 0) AND workerStatus = 'Available' AND userDetails.loginID=('" + user + "')"))
+                    {
+                        using (SqlDataAdapter sda = new SqlDataAdapter())
+                        {
+                            cmd.Connection = con;
+                            sda.SelectCommand = cmd;
+                            using (DataTable dt = new DataTable())
+                            {
+                                sda.Fill(dt);
+                                using (XLWorkbook wb = new XLWorkbook())
+                                {
+                                    wb.Worksheets.Add(dt, "Workers");
+
+                                    Response.Clear();
+                                    Response.Buffer = true;
+                                    Response.Charset = "";
+                                    Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                    Response.AddHeader("content-disposition", "attachment;filename=Before Renew.xlsx");
+                                    using (MemoryStream MyMemoryStream = new MemoryStream())
+                                    {
+                                        wb.SaveAs(MyMemoryStream);
+                                        MyMemoryStream.WriteTo(Response.OutputStream);
+                                        Response.Flush();
+                                        Response.End();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        protected void btnGetAfterRenew_Click(object sender, EventArgs e)
+        {
+            string role = Session["role"].ToString();
+            string user = Session["id"].ToString();
+            setUserLog();
+            string strConnString = ConfigurationManager.ConnectionStrings["PrisMegahConnString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(strConnString))
+            {
+                if (role == "System Admin" || role == "Director")
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT workerDetails.*, workerInsurans.nextOfKin, workerInsurans.nextOfKinAddress FROM [workerDetails] LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo WHERE (DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(passportExp,'yyyy-MM-dd')) > 0 AND DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(PLKSExp,'yyyy-MM-dd')) > 0) AND workerStatus = 'Available'"))
+                    {
+                        using (SqlDataAdapter sda = new SqlDataAdapter())
+                        {
+                            cmd.Connection = con;
+                            sda.SelectCommand = cmd;
+                            using (DataTable dt = new DataTable())
+                            {
+                                sda.Fill(dt);
+                                using (XLWorkbook wb = new XLWorkbook())
+                                {
+                                    wb.Worksheets.Add(dt, "Workers");
+
+                                    Response.Clear();
+                                    Response.Buffer = true;
+                                    Response.Charset = "";
+                                    Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                    Response.AddHeader("content-disposition", "attachment;filename=After Renew.xlsx");
+                                    using (MemoryStream MyMemoryStream = new MemoryStream())
+                                    {
+                                        wb.SaveAs(MyMemoryStream);
+                                        MyMemoryStream.WriteTo(Response.OutputStream);
+                                        Response.Flush();
+                                        Response.End();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else if(role == "Administrator")
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT workerDetails.*, workerInsurans.nextOfKin, workerInsurans.nextOfKinAddress FROM ([workerDetails] INNER JOIN permitCompany_List ON (workerDetails.PLKSCompany=permitCompany_List.companyName) INNER JOIN userDetails ON (permitCompany_List.PIC1=userDetails.name OR permitCompany_List.PIC2=userDetails.name OR permitCompany_List.PIC3=userDetails.name OR permitCompany_List.PIC4=userDetails.name)) LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo WHERE (DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(passportExp,'yyyy-MM-dd')) > 0 AND DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(PLKSExp,'yyyy-MM-dd')) > 0) AND workerStatus = 'Available' AND userDetails.loginID=('" + user + "')"))
+                    {
+                        using (SqlDataAdapter sda = new SqlDataAdapter())
+                        {
+                            cmd.Connection = con;
+                            sda.SelectCommand = cmd;
+                            using (DataTable dt = new DataTable())
+                            {
+                                sda.Fill(dt);
+                                using (XLWorkbook wb = new XLWorkbook())
+                                {
+                                    wb.Worksheets.Add(dt, "Workers");
+
+                                    Response.Clear();
+                                    Response.Buffer = true;
+                                    Response.Charset = "";
+                                    Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                    Response.AddHeader("content-disposition", "attachment;filename=After Renew.xlsx");
+                                    using (MemoryStream MyMemoryStream = new MemoryStream())
+                                    {
+                                        wb.SaveAs(MyMemoryStream);
+                                        MyMemoryStream.WriteTo(Response.OutputStream);
+                                        Response.Flush();
+                                        Response.End();
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
