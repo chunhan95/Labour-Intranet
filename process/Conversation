@@ -291,3 +291,7 @@ This can further prevent the existed foreign worker record being entered again i
 
 Lim Boon Haw:
 Search the worker record by PLKS expired date has been completed.
+
+Chin Jen Wei:
+Get expired date reminder base on expired date remainder module has been completed.
+
