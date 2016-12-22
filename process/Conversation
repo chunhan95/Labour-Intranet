@@ -284,3 +284,7 @@ Chore of having calendar in expiry renewal has been completed
 User story of expired date reminder is in development process
 
 
+22/12/2016
+Chong Wai Kit:
+Chore of block duplicate new passport number during new record entry has been completed.
+This can further prevent the existed foreign worker record being entered again into system database.
