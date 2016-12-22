@@ -288,3 +288,6 @@ User story of expired date reminder is in development process
 Chong Wai Kit:
 Chore of block duplicate new passport number during new record entry has been completed.
 This can further prevent the existed foreign worker record being entered again into system database.
+
+Lim Boon Haw:
+Search the worker record by PLKS expired date has been completed.
