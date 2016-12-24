@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89AC87F1-3649-4AE6-85C6-2CAE2A5A3B84}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PrisMegahHRSystem</RootNamespace>
+    <AssemblyName>PrisMegahHRSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\packages\ClosedXML.0.76.0\lib\net40-client\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdminAssign.aspx" />
+    <Content Include="CSS class\Layout.css" />
+    <Content Include="CSS class\Login_Layout.css" />
+    <Content Include="CSS class\MasterPage_Layout.css" />
+    <Content Include="CSS class\Passport_Layout.css" />
+    <Content Include="EditPay.aspx" />
+    <Content Include="Expiry Reminder\30days.aspx" />
+    <Content Include="Expiry Reminder\60days.aspx" />
+    <Content Include="Expiry Reminder\90days.aspx" />
+    <Content Include="Expiry Reminder\Expired.aspx" />
+    <Content Include="ImagePreview.aspx" />
+    <Content Include="Images\add-button.png" />
+    <Content Include="Images\blue-circle.png" />
+    <Content Include="Images\calendar.png" />
+    <Content Include="Images\clear-action.png" />
+    <Content Include="Images\down-arrow.png" />
+    <Content Include="Images\edit-icon.png" />
+    <Content Include="Images\filter-button.png" />
+    <Content Include="Images\gender.png" />
+    <Content Include="Images\home-backgound.jpg" />
+    <Content Include="Images\key-button.png" />
+    <Content Include="Images\login-button.png" />
+    <Content Include="Images\logout-button.png" />
+    <Content Include="Images\minus-button.png" />
+    <Content Include="Images\move-action.png" />
+    <Content Include="Images\orange-circle.png" />
+    <Content Include="Images\prismegah_icon.ico" />
+    <Content Include="Images\red-circle.png" />
+    <Content Include="Images\search-button.png" />
+    <Content Include="Images\yellow-circle.png" />
+    <Content Include="ism\css\my-slider.css" />
+    <Content Include="ism\image\slides\_u\1471284666712_650397.jpg" />
+    <Content Include="ism\image\slides\_u\1471284666771_831963.jpg" />
+    <Content Include="ism\image\slides\_u\1471284667079_878114.png" />
+    <Content Include="ism\image\slides\_u\1471284667368_985522.jpg" />
+    <Content Include="ism\image\slides\_u\1471284667637_435833.png" />
+    <Content Include="ism\image\slides\_u\1471284667817_1143.jpg" />
+    <Content Include="ism\image\slides\_u\1471284669541_748886.png" />
+    <Content Include="ism\js\ism-2.2.js" />
+    <Content Include="ism\js\ism-2.2.min.js" />
+    <Content Include="LogoutScreen.aspx" />
+    <Content Include="Particular Maintenance\AddEmployee.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="Images\cancel-button.png" />
+    <Content Include="Images\confirm-buton.png" />
+    <Content Include="Images\light-blue-background.jpg" />
+    <Content Include="Images\loginBackground.png" />
+    <Content Include="Images\login_icon.png" />
+    <Content Include="Images\PrisMegah_Logo.JPG" />
+    <Content Include="Login.aspx" />
+    <Content Include="Particular Maintenance\AddWorker.aspx" />
+    <Content Include="Attach.aspx" />
+    <Content Include="Company.aspx" />
+    <Content Include="Particular Maintenance\EditEmployee.aspx" />
+    <Content Include="Particular Maintenance\EditWorker.aspx" />
+    <Content Include="Payment.aspx" />
+    <Content Include="RecordPreview.aspx" />
+    <Content Include="UpdatePassport.aspx" />
+    <Content Include="Expiry Reminder\ViewDetails.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminAssign.aspx.cs">
+      <DependentUpon>AdminAssign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAssign.aspx.designer.cs">
+      <DependentUpon>AdminAssign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditPay.aspx.cs">
+      <DependentUpon>EditPay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPay.aspx.designer.cs">
+      <DependentUpon>EditPay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expiry Reminder\30days.aspx.cs">
+      <DependentUpon>30days.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expiry Reminder\30days.aspx.designer.cs">
+      <DependentUpon>30days.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expiry Reminder\60days.aspx.cs">
+      <DependentUpon>60days.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expiry Reminder\60days.aspx.designer.cs">
+      <DependentUpon>60days.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expiry Reminder\90days.aspx.cs">
+      <DependentUpon>90days.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expiry Reminder\90days.aspx.designer.cs">
+      <DependentUpon>90days.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expiry Reminder\Expired.aspx.cs">
+      <DependentUpon>Expired.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expiry Reminder\Expired.aspx.designer.cs">
+      <DependentUpon>Expired.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master page\Account.Master.cs">
+      <DependentUpon>Account.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master page\Account.Master.designer.cs">
+      <DependentUpon>Account.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Company.aspx.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company.aspx.designer.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Particular Maintenance\EditWorker.aspx.cs">
+      <DependentUpon>EditWorker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Particular Maintenance\EditWorker.aspx.designer.cs">
+      <DependentUpon>EditWorker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImagePreview.aspx.cs">
+      <DependentUpon>ImagePreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImagePreview.aspx.designer.cs">
+      <DependentUpon>ImagePreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogoutScreen.aspx.cs">
+      <DependentUpon>LogoutScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogoutScreen.aspx.designer.cs">
+      <DependentUpon>LogoutScreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master page\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master page\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Master page\Common.Master.cs">
+      <DependentUpon>Common.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master page\Common.Master.designer.cs">
+      <DependentUpon>Common.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Particular Maintenance\AddEmployee.aspx.cs">
+      <DependentUpon>AddEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Particular Maintenance\AddEmployee.aspx.designer.cs">
+      <DependentUpon>AddEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master page\Director.Master.cs">
+      <DependentUpon>Director.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master page\Director.Master.designer.cs">
+      <DependentUpon>Director.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Particular Maintenance\AddWorker.aspx.cs">
+      <DependentUpon>AddWorker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Particular Maintenance\AddWorker.aspx.designer.cs">
+      <DependentUpon>AddWorker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Attach.aspx.cs">
+      <DependentUpon>Attach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Attach.aspx.designer.cs">
+      <DependentUpon>Attach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Particular Maintenance\EditEmployee.aspx.cs">
+      <DependentUpon>EditEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Particular Maintenance\EditEmployee.aspx.designer.cs">
+      <DependentUpon>EditEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordPreview.aspx.cs">
+      <DependentUpon>RecordPreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecordPreview.aspx.designer.cs">
+      <DependentUpon>RecordPreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePassport.aspx.cs">
+      <DependentUpon>UpdatePassport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdatePassport.aspx.designer.cs">
+      <DependentUpon>UpdatePassport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Expiry Reminder\ViewDetails.aspx.cs">
+      <DependentUpon>ViewDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Expiry Reminder\ViewDetails.aspx.designer.cs">
+      <DependentUpon>ViewDetails.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Master page\Director.Master" />
+    <Content Include="Master page\Admin.Master" />
+    <Content Include="Master page\Common.Master" />
+    <Content Include="packages.config" />
+    <Content Include="Master page\Account.Master" />
+    <None Include="Properties\PublishProfiles\PrisMegahHRSystem.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\Attachment\" />
+    <Folder Include="PDFs\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6409</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9768/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

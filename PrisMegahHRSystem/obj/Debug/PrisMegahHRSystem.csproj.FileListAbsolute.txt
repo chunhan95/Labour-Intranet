@@ -19,3 +19,11 @@ C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem (new)\PrisMegahHRSyst
 C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem (new)\PrisMegahHRSystem\obj\Debug\PrisMegahHRSystem.dll
 C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem (new)\PrisMegahHRSystem\obj\Debug\PrisMegahHRSystem.pdb
 C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem (new)\PrisMegahHRSystem\obj\Debug\PrisMegahHRSystem.csprojResolveAssemblyReference.cache
+C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem\bin\PrisMegahHRSystem.dll
+C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem\bin\PrisMegahHRSystem.pdb
+C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem\bin\ClosedXML.dll
+C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem\bin\DocumentFormat.OpenXml.dll
+C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem\bin\ClosedXML.xml
+C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem\obj\Debug\PrisMegahHRSystem.csprojResolveAssemblyReference.cache
+C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem\obj\Debug\PrisMegahHRSystem.dll
+C:\Users\PC\Source\Repos\Labour-Intranet\PrisMegahHRSystem\obj\Debug\PrisMegahHRSystem.pdb
