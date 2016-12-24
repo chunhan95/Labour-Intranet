@@ -243,7 +243,7 @@ Chin Jen Wei:
 Upload Worker Particular Module is finish and delivered.
 
 Chin Jen Wei:
-Renew all the relevant expired details has been started
+Renew all the relevant expired details has been started.
 
 Ng Shi Hang : 
 User story 134567411 download and save attachment module has been started.
@@ -256,3 +256,56 @@ Upload Worker particular Module is fully developed.
 Renewal all relevant expired details is in progress.
 Download and save attachment module is in progress.
 The chore of update expiry date with calendar is in progress.
+
+21/12/2016
+Lim Boon Haw:
+Download foreign worker record is finished and delivered to customer for review.
+
+Lim Boon Haw:
+Search the worker record by PLKS expired date started and in progress.
+
+Chong Wai Kit:
+Please add in another filter option which combine both previous by PLKS company and the current by expired date as well.
+
+Chin Jen Wei:
+Renew all the relevant expired details Module is finish and delivered.
+
+Lee Chun Han:
+Update module has been successfully completed.
+
+Chin Jen Wei:
+Get expired date reminder base on expired date remainder module has been started, i will finish it early ASAP. 
+
+Daily Objective
+Feature of download record from record preview page has been completed
+User story of search worker record by PLKS expired date is in development process
+Feature of expiry renewal has been completed
+Chore of having calendar in expiry renewal has been completed
+User story of expired date reminder is in development process
+
+
+22/12/2016
+Chong Wai Kit:
+Chore of block duplicate new passport number during new record entry has been completed.
+This can further prevent the existed foreign worker record being entered again into system database.
+
+Lim Boon Haw:
+Search the worker record by PLKS expired date has been completed.
+
+Chin Jen Wei:
+Get expired date reminder base on expired date module has been completed.
+
+Daily Objective
+Chore of block entry of duplicate new passport number completed.
+Feature of search record by expired date completed.
+Feature of reminder based on expired date completed.
+Feature of download or print attachment file still in development process.
+
+
+23/12/2016
+Ng Shi Hang:
+Module relate with attachment file has been completed and delivered
+
+Daily Objective
+Feature of download or save attachment completed.
+Feature of print attachment completed.

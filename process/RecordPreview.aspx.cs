@@ -9,6 +9,8 @@ using System.Web.Services;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
+using ClosedXML.Excel;
 
 namespace PrisMegahHRSystem
 {
@@ -91,6 +93,156 @@ namespace PrisMegahHRSystem
                         dt.Rows[0]["RecordCount"] = cmd.Parameters["@RecordCount"].Value;
                         ds.Tables.Add(dt);
                         return ds;
+                    }
+                }
+            }
+        }
+
+        protected void btnGetBeforeRenew_Click(object sender, EventArgs e)
+        {
+            string role = Session["role"].ToString();
+            string user = Session["id"].ToString();
+            setUserLog();
+            string strConnString = ConfigurationManager.ConnectionStrings["PrisMegahConnString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(strConnString))
+            {
+                if (role == "System Admin" || role == "Director")
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT workerDetails.*, workerInsurans.nextOfKin, workerInsurans.nextOfKinAddress FROM [workerDetails] LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo WHERE (DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(passportExp,'yyyy-MM-dd')) <= 0 OR DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(PLKSExp,'yyyy-MM-dd')) <= 0) AND workerStatus = 'Available'"))
+                    {
+                        using (SqlDataAdapter sda = new SqlDataAdapter())
+                        {
+                            cmd.Connection = con;
+                            sda.SelectCommand = cmd;
+                            using (DataTable dt = new DataTable())
+                            {
+                                sda.Fill(dt);
+                                using (XLWorkbook wb = new XLWorkbook())
+                                {
+                                    wb.Worksheets.Add(dt, "Workers");
+
+                                    Response.Clear();
+                                    Response.Buffer = true;
+                                    Response.Charset = "";
+                                    Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                    Response.AddHeader("content-disposition", "attachment;filename=Before Renew.xlsx");
+                                    using (MemoryStream MyMemoryStream = new MemoryStream())
+                                    {
+                                        wb.SaveAs(MyMemoryStream);
+                                        MyMemoryStream.WriteTo(Response.OutputStream);
+                                        Response.Flush();
+                                        Response.End();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else if (role == "Administrator")
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT workerDetails.*, workerInsurans.nextOfKin, workerInsurans.nextOfKinAddress FROM ([workerDetails] INNER JOIN permitCompany_List ON (workerDetails.PLKSCompany=permitCompany_List.companyName) INNER JOIN userDetails ON (permitCompany_List.PIC1=userDetails.name OR permitCompany_List.PIC2=userDetails.name OR permitCompany_List.PIC3=userDetails.name OR permitCompany_List.PIC4=userDetails.name)) LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo WHERE (DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(passportExp,'yyyy-MM-dd')) <= 0 OR DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(PLKSExp,'yyyy-MM-dd')) <= 0) AND workerStatus = 'Available' AND userDetails.loginID=('" + user + "')"))
+                    {
+                        using (SqlDataAdapter sda = new SqlDataAdapter())
+                        {
+                            cmd.Connection = con;
+                            sda.SelectCommand = cmd;
+                            using (DataTable dt = new DataTable())
+                            {
+                                sda.Fill(dt);
+                                using (XLWorkbook wb = new XLWorkbook())
+                                {
+                                    wb.Worksheets.Add(dt, "Workers");
+
+                                    Response.Clear();
+                                    Response.Buffer = true;
+                                    Response.Charset = "";
+                                    Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                    Response.AddHeader("content-disposition", "attachment;filename=Before Renew.xlsx");
+                                    using (MemoryStream MyMemoryStream = new MemoryStream())
+                                    {
+                                        wb.SaveAs(MyMemoryStream);
+                                        MyMemoryStream.WriteTo(Response.OutputStream);
+                                        Response.Flush();
+                                        Response.End();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        protected void btnGetAfterRenew_Click(object sender, EventArgs e)
+        {
+            string role = Session["role"].ToString();
+            string user = Session["id"].ToString();
+            setUserLog();
+            string strConnString = ConfigurationManager.ConnectionStrings["PrisMegahConnString"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(strConnString))
+            {
+                if (role == "System Admin" || role == "Director")
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT workerDetails.*, workerInsurans.nextOfKin, workerInsurans.nextOfKinAddress FROM [workerDetails] LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo WHERE (DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(passportExp,'yyyy-MM-dd')) > 0 AND DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(PLKSExp,'yyyy-MM-dd')) > 0) AND workerStatus = 'Available'"))
+                    {
+                        using (SqlDataAdapter sda = new SqlDataAdapter())
+                        {
+                            cmd.Connection = con;
+                            sda.SelectCommand = cmd;
+                            using (DataTable dt = new DataTable())
+                            {
+                                sda.Fill(dt);
+                                using (XLWorkbook wb = new XLWorkbook())
+                                {
+                                    wb.Worksheets.Add(dt, "Workers");
+
+                                    Response.Clear();
+                                    Response.Buffer = true;
+                                    Response.Charset = "";
+                                    Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                    Response.AddHeader("content-disposition", "attachment;filename=After Renew.xlsx");
+                                    using (MemoryStream MyMemoryStream = new MemoryStream())
+                                    {
+                                        wb.SaveAs(MyMemoryStream);
+                                        MyMemoryStream.WriteTo(Response.OutputStream);
+                                        Response.Flush();
+                                        Response.End();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                else if(role == "Administrator")
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT workerDetails.*, workerInsurans.nextOfKin, workerInsurans.nextOfKinAddress FROM ([workerDetails] INNER JOIN permitCompany_List ON (workerDetails.PLKSCompany=permitCompany_List.companyName) INNER JOIN userDetails ON (permitCompany_List.PIC1=userDetails.name OR permitCompany_List.PIC2=userDetails.name OR permitCompany_List.PIC3=userDetails.name OR permitCompany_List.PIC4=userDetails.name)) LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo WHERE (DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(passportExp,'yyyy-MM-dd')) > 0 AND DATEDIFF(day, FORMAT(GETDATE(),'yyyy-MM-dd'), FORMAT(PLKSExp,'yyyy-MM-dd')) > 0) AND workerStatus = 'Available' AND userDetails.loginID=('" + user + "')"))
+                    {
+                        using (SqlDataAdapter sda = new SqlDataAdapter())
+                        {
+                            cmd.Connection = con;
+                            sda.SelectCommand = cmd;
+                            using (DataTable dt = new DataTable())
+                            {
+                                sda.Fill(dt);
+                                using (XLWorkbook wb = new XLWorkbook())
+                                {
+                                    wb.Worksheets.Add(dt, "Workers");
+
+                                    Response.Clear();
+                                    Response.Buffer = true;
+                                    Response.Charset = "";
+                                    Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+                                    Response.AddHeader("content-disposition", "attachment;filename=After Renew.xlsx");
+                                    using (MemoryStream MyMemoryStream = new MemoryStream())
+                                    {
+                                        wb.SaveAs(MyMemoryStream);
+                                        MyMemoryStream.WriteTo(Response.OutputStream);
+                                        Response.Flush();
+                                        Response.End();
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -186,6 +338,80 @@ namespace PrisMegahHRSystem
                     " INNER JOIN userDetails ON (permitCompany_List.PIC1=userDetails.name OR permitCompany_List.PIC2=userDetails.name OR permitCompany_List.PIC3=userDetails.name OR permitCompany_List.PIC4=userDetails.name))" +
                     " LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo" +
                     " WHERE PLKSCompany=('" + ddlSearchByCo.Text + "') AND workerStatus = 'Available' AND userDetails.loginID=('" + user + "')";
+            }
+            SqlCommand cmd = new SqlCommand(queryStr, conn);
+            gvWorkers.DataSource = cmd.ExecuteReader();
+            gvWorkers.DataBind();
+            conn.Close();
+        }
+
+        protected void ibtnByExpDate_Click(object sender, ImageClickEventArgs e)
+        {
+            string role = Session["role"].ToString();
+            string user = Session["id"].ToString();
+            conn = new SqlConnection(connString);
+            DataTable dt = new DataTable();
+            conn.Open();
+            String queryStr = "";
+            if (role == "System Admin" || role == "Director")
+            {
+                queryStr = "SELECT FORMAT([receivedDate],'dd/MM/yyyy') AS [Received Date], [name] AS [Worker Name], [passportNo_New] AS [New Passport No], [passportNo_Old] AS [Old Passport No]," +
+                    " [nationality] AS [Nationality], FORMAT([passportExp],'dd/MM/yyyy') AS [Passport Expiry], FORMAT([PLKSExp],'dd/MM/yyyy') AS [PLKS Expiry]," +
+                    " [PLKSCompany] AS [Permit Company Name], [sector] AS [Sector], [employerName] AS [Client], [employerCompany] AS [Client Company]," +
+                    " [employerContact_No] AS [Client Tel], [agent] AS [Marketing], [adminIncharge] AS [Admin], [serviceType] AS [Service Type], [servicePhase] AS [Service Phase]," +
+                    " [submitBy] As [Submit By], [submitTo] AS [Submit To], [invoiceNo] AS [Invoice], FORMAT([submitDate],'dd/MM/yyyy') AS [Submit Date], [workerDetails].[policyIG] AS [Policy IG]," +
+                    " [nextOfKin] AS [Next Of Kin], [nextOfKinAddress] AS [Next Of Kin Address],  [remark] AS [Remarks] FROM [workerDetails] LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo" +
+                    " WHERE PLKSExp>=('" + txtSearchExpStart.Text + "') AND PLKSExp<=('" + txtSearchExpEnd.Text + "') AND workerStatus = 'Available'";
+            }
+            else if (role == "Administrator")
+            {
+                queryStr = "SELECT FORMAT([receivedDate],'dd/MM/yyyy') AS [Received Date], workerDetails.name AS [Worker Name], [passportNo_New] AS [New Passport No], [passportNo_Old] AS [Old Passport No]," +
+                    " [nationality] AS [Nationality], FORMAT([passportExp],'dd/MM/yyyy') AS [Passport Expiry], FORMAT([PLKSExp],'dd/MM/yyyy') AS [PLKS Expiry]," +
+                    " [PLKSCompany] AS [Permit Company Name], [sector] AS [Sector], [employerName] AS [Client], [employerCompany] AS [Client Company]," +
+                    " [employerContact_No] AS [Client Tel], [agent] AS [Marketing], [adminIncharge] AS [Admin], [serviceType] AS [Service Type], [servicePhase] AS [Service Phase]," +
+                    " [submitBy] As [Submit By], [submitTo] AS [Submit To], [invoiceNo] AS [Invoice], FORMAT([submitDate],'dd/MM/yyyy') AS [Submit Date], [workerDetails].[policyIG] AS [Policy IG]," +
+                    " [nextOfKin] AS [Next Of Kin], [nextOfKinAddress] AS [Next Of Kin Address],  [remark] AS [Remarks] FROM (workerDetails" +
+                    " INNER JOIN permitCompany_List ON (workerDetails.PLKSCompany=permitCompany_List.companyName)" +
+                    " INNER JOIN userDetails ON (permitCompany_List.PIC1=userDetails.name OR permitCompany_List.PIC2=userDetails.name OR permitCompany_List.PIC3=userDetails.name OR permitCompany_List.PIC4=userDetails.name))" +
+                    " LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo" +
+                    " WHERE PLKSExp>=('" + txtSearchExpStart.Text + "') AND PLKSExp<=('" + txtSearchExpEnd.Text + "') AND workerStatus = 'Available' AND userDetails.loginID=('" + user + "')";
+            }
+            SqlCommand cmd = new SqlCommand(queryStr, conn);
+            gvWorkers.DataSource = cmd.ExecuteReader();
+            gvWorkers.DataBind();
+            conn.Close();
+        }
+
+        protected void btnCoAndExp_Click(object sender, EventArgs e)
+        {
+            string role = Session["role"].ToString();
+            string user = Session["id"].ToString();
+            conn = new SqlConnection(connString);
+            DataTable dt = new DataTable();
+            conn.Open();
+            String queryStr = "";
+            if (role == "System Admin" || role == "Director")
+            {
+                queryStr = "SELECT FORMAT([receivedDate],'dd/MM/yyyy') AS [Received Date], [name] AS [Worker Name], [passportNo_New] AS [New Passport No], [passportNo_Old] AS [Old Passport No]," +
+                    " [nationality] AS [Nationality], FORMAT([passportExp],'dd/MM/yyyy') AS [Passport Expiry], FORMAT([PLKSExp],'dd/MM/yyyy') AS [PLKS Expiry]," +
+                    " [PLKSCompany] AS [Permit Company Name], [sector] AS [Sector], [employerName] AS [Client], [employerCompany] AS [Client Company]," +
+                    " [employerContact_No] AS [Client Tel], [agent] AS [Marketing], [adminIncharge] AS [Admin], [serviceType] AS [Service Type], [servicePhase] AS [Service Phase]," +
+                    " [submitBy] As [Submit By], [submitTo] AS [Submit To], [invoiceNo] AS [Invoice], FORMAT([submitDate],'dd/MM/yyyy') AS [Submit Date], [workerDetails].[policyIG] AS [Policy IG]," +
+                    " [nextOfKin] AS [Next Of Kin], [nextOfKinAddress] AS [Next Of Kin Address],  [remark] AS [Remarks] FROM [workerDetails] LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo" +
+                    " WHERE PLKSCompany=('" + ddlSearchByCo.Text + "') AND PLKSExp>=('" + txtSearchExpStart.Text + "') AND PLKSExp<=('" + txtSearchExpEnd.Text + "') AND workerStatus = 'Available'";
+            }
+            else if (role == "Administrator")
+            {
+                queryStr = "SELECT FORMAT([receivedDate],'dd/MM/yyyy') AS [Received Date], workerDetails.name AS [Worker Name], [passportNo_New] AS [New Passport No], [passportNo_Old] AS [Old Passport No]," +
+                    " [nationality] AS [Nationality], FORMAT([passportExp],'dd/MM/yyyy') AS [Passport Expiry], FORMAT([PLKSExp],'dd/MM/yyyy') AS [PLKS Expiry]," +
+                    " [PLKSCompany] AS [Permit Company Name], [sector] AS [Sector], [employerName] AS [Client], [employerCompany] AS [Client Company]," +
+                    " [employerContact_No] AS [Client Tel], [agent] AS [Marketing], [adminIncharge] AS [Admin], [serviceType] AS [Service Type], [servicePhase] AS [Service Phase]," +
+                    " [submitBy] As [Submit By], [submitTo] AS [Submit To], [invoiceNo] AS [Invoice], FORMAT([submitDate],'dd/MM/yyyy') AS [Submit Date], [workerDetails].[policyIG] AS [Policy IG]," +
+                    " [nextOfKin] AS [Next Of Kin], [nextOfKinAddress] AS [Next Of Kin Address],  [remark] AS [Remarks] FROM (workerDetails" +
+                    " INNER JOIN permitCompany_List ON (workerDetails.PLKSCompany=permitCompany_List.companyName)" +
+                    " INNER JOIN userDetails ON (permitCompany_List.PIC1=userDetails.name OR permitCompany_List.PIC2=userDetails.name OR permitCompany_List.PIC3=userDetails.name OR permitCompany_List.PIC4=userDetails.name))" +
+                    " LEFT JOIN [workerInsurans] ON workerDetails.passportNo_New=workerInsurans.passportNo" +
+                    " WHERE PLKSCompany=('" + ddlSearchByCo.Text + "') AND PLKSExp>=('" + txtSearchExpStart.Text + "') AND PLKSExp<=('" + txtSearchExpEnd.Text + "') AND workerStatus = 'Available' AND userDetails.loginID=('" + user + "')";
             }
             SqlCommand cmd = new SqlCommand(queryStr, conn);
             gvWorkers.DataSource = cmd.ExecuteReader();
